@@ -8,4 +8,7 @@
     <string name="label_hour">Hora</string>
     <string name="label_tasks">Tarefas</string>
     <string name="label_description_new_task">Criar nova Tarefa</string>
+    <string name="label_edit">Editar</string>
+    <string name="label_delete">Deletar</string>
+    <string name="label_dont_have_tasks">Ops! Você não possui\nnenhuma tarefa para hoje.</string>
 </resources>
