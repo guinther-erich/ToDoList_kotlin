@@ -6,6 +6,8 @@ import com.example.todolist.databinding.ActivityAddTaskBinding
 import com.example.todolist.extensions.format
 import com.example.todolist.extensions.text
 import com.google.android.material.datepicker.MaterialDatePicker
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 import java.util.*
 
 class AddTaskActivity : AppCompatActivity() {
@@ -29,6 +31,16 @@ class AddTaskActivity : AppCompatActivity() {
                 binding.tilDate.text = Date(it + offset).format()
             }
             datePicker.show(supportFragmentManager, "DATE_PICKER_TAG")
+        }
+
+        binding.tilTime.editText?.setOnClickListener {
+            val timePicker = MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_24H)
+                .build()
+            timePicker.addOnPositiveButtonClickListener {
+                binding.tilTime.text = "${timePicker.hour}:${timePicker.minute}"
+            }
+            timePicker.show(supportFragmentManager, null)
         }
     }
 }
